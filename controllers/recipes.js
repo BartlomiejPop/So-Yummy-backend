@@ -1,7 +1,7 @@
 import recipes from "../schemas/index.js";
 import path from "path";
 import fs from "fs";
-import Jimp from "Jimp";
+import Jimp from "jimp";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -151,15 +151,6 @@ export const addImage = async (req, res, next) => {
 		avatar.resize(250, 250).quality(80);
 		await avatar.writeAsync(tmpFilePath);
 		fs.renameSync(tmpFilePath, avatarFilePath);
-		// const tmpDir = path.join(__dirname, "..", "tmp");
-		// const avatarsDir = path.join(__dirname, "..", "public", "avatars");
-		// const uniqueFileName = `${Date.now()}-${file.originalname}`;
-		// const avatar = await Jimp.read(file.path);
-		// avatar.resize(250, 250).quality(80);
-		// await avatar.writeAsync(uniqueFileName);
-		// // const tmpFilePath = path.join(tmpDir, uniqueFileName);
-		// const avatarFilePath = path.join(avatarsDir, uniqueFileName);
-		// const tmpFilePath = path.join(tmpDir, uniqueFileName);
 		res.status(200).json({
 			status: "success",
 			data: {
