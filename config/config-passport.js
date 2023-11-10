@@ -4,7 +4,7 @@ import User from "../schemas/user.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-const secret = "secret";
+const secret = process.env.SECRET;
 const ExtractJWT = passportJWT.ExtractJwt;
 const Strategy = passportJWT.Strategy;
 const params = {
