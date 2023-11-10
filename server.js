@@ -12,9 +12,6 @@ dotenv.config();
 
 const dbURL = "mongodb+srv://Bartek:123@cluster0.uepqqcq.mongodb.net/";
 const port = 3000;
-// if (port == null || port == "") {
-// 	port = 8000;
-// }
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
@@ -58,9 +55,9 @@ try {
 	});
 	console.log("Database connection successful");
 
-	app.listen(port, () => {
+	app.listen(3000, () => {
 		createFolderIsNotExist("uploads");
-		console.log(`Server running. Use our API on port: ${port}`);
+		console.log(`Server running. Use our API on port: 3000`);
 	});
 } catch (error) {
 	console.error("Cannot connect to Mongo Database");
