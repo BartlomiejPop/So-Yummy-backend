@@ -143,7 +143,7 @@ export const addImage = async (req, res, next) => {
 			});
 		}
 		const tmpDir = path.join(__dirname, "..", "tmp");
-		const avatarsDir = path.join(__dirname, "..", "..", "public", "avatars");
+		const avatarsDir = path.join(__dirname, "..", "public", "avatars");
 		const uniqueFileName = `${Date.now()}-${file.originalname}`;
 		const tmpFilePath = path.join(tmpDir, uniqueFileName);
 		const avatarFilePath = path.join(avatarsDir, uniqueFileName);

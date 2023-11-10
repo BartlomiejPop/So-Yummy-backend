@@ -10,11 +10,11 @@ import { promises as fsPromises } from "fs";
 import dotenv from "dotenv";
 dotenv.config();
 
-const dbURL = process.env.DBURL;
-const port = process.env.PORT || 3000;
-if (port == null || port == "") {
-	port = 8000;
-}
+const dbURL = "mongodb+srv://Bartek:123@cluster0.uepqqcq.mongodb.net/";
+const port = 3000;
+// if (port == null || port == "") {
+// 	port = 8000;
+// }
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
