@@ -99,25 +99,4 @@ const register = async (req, res, next) => {
 	}
 };
 
-const logout = async (req, res) => {
-	const { _id } = req.user;
-	const user = await User.findById(_id);
-	if (user.token) {
-		user.token = "";
-		await user.save();
-		return res.status(200).json({
-			code: 204,
-			status: "Logged out",
-		});
-	}
-	return res.status(400).json({
-		code: 400,
-		Status: "Bad request",
-		ContentType: "application / json",
-		ResponseBody: {
-			message: "Bad request",
-		},
-	});
-};
-
-export default { login, register, logout, auth };
+export default { login, register, auth };

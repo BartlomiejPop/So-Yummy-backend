@@ -7,6 +7,4 @@ router.post("/register", ctrlAuth.register);
 
 router.post("/login", ctrlAuth.login);
 
-router.get("/logout", ctrlAuth.logout);
-
 export default router;
